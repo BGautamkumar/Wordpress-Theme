@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Aspire</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/scripts/main.js"></script>
+</head>
+
+<body class="font-body text-textMain bg-darkBg antialiased overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav class="glass-nav sticky top-0 z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-12">
+          <a href="/" class="text-3xl font-black font-heading tracking-tight text-textMain">Aspire<span
+              class="text-primary">.</span></a>
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="/pages/products.html" class="nav-link">Products</a>
+            <a href="/pages/templates.html" class="nav-link">Templates</a>
+            <a href="/pages/features.html" class="nav-link">Features</a>
+            <a href="/pages/blog.html" class="nav-link text-primary font-bold">Blog</a>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div id="auth-container" class="hidden lg:flex items-center space-x-4"></div>
+          <button id="mobile-menu-btn" class="lg:hidden text-textMain hover:text-primary"><svg
+              class="w-6 h-6 mobile-menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="pt-24 pb-16 relative overflow-hidden border-b border-borderDim text-center">
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none z-0">
+    </div>
+    <div class="container mx-auto px-6 relative z-10 animate-on-scroll">
+      <h1 class="text-5xl md:text-7xl font-black font-heading mb-6 tracking-tight">The Aspire Journal.</h1>
+      <p class="text-xl text-textMuted max-w-2xl mx-auto mb-10">Insights on headless commerce, performance engineering,
+        and conversion rate optimization.</p>
+    </div>
+  </header>
+
+  <!-- Blog Grid -->
+  <main class="py-24 container mx-auto px-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Article 1 -->
+      <article class="group animate-on-scroll">
+        <a href="#" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl">
+          <div class="relative aspect-[16/9] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-6">
+            <img src="/images/prod_cwv_1779342586301.png" alt="Core Web Vitals"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+              class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="flex items-center space-x-4 text-xs font-bold text-primary tracking-wider uppercase mb-3">
+            <span>Engineering</span>
+            <span class="text-borderDim">•</span>
+            <span class="text-textMuted">May 21, 2026</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">Achieving 100/100
+            Core Web Vitals on WooCommerce</h2>
+          <p class="text-textMuted line-clamp-2">A deep dive into our proprietary caching layer and how it fundamentally
+            transforms WordPress performance.</p>
+        </a>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="group animate-on-scroll delay-100">
+        <a href="#" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl">
+          <div class="relative aspect-[16/9] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-6">
+            <img src="/images/prod_abtesting_1779342630338.png" alt="A/B Testing"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+              class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="flex items-center space-x-4 text-xs font-bold text-purple-400 tracking-wider uppercase mb-3">
+            <span>Marketing</span>
+            <span class="text-borderDim">•</span>
+            <span class="text-textMuted">May 15, 2026</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors leading-tight">The Psychology
+            of A/B Split Testing</h2>
+          <p class="text-textMuted line-clamp-2">How small variations in layout and micro-copy can lead to massive
+            compounding returns on checkout conversions.</p>
+        </a>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="group animate-on-scroll delay-200">
+        <a href="#" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl">
+          <div class="relative aspect-[16/9] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-6">
+            <img src="/images/prod_nextjs_1779342552349.png" alt="Next.js Headless"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+              class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="flex items-center space-x-4 text-xs font-bold text-green-400 tracking-wider uppercase mb-3">
+            <span>Architecture</span>
+            <span class="text-borderDim">•</span>
+            <span class="text-textMuted">May 10, 2026</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-3 group-hover:text-green-400 transition-colors leading-tight">Why We Ported
+            Aspire to Next.js 15</h2>
+          <p class="text-textMuted line-clamp-2">Exploring the technical challenges and massive benefits of moving from
+            monolithic PHP to a React-based headless architecture.</p>
+        </a>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="group animate-on-scroll">
+        <a href="#" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl">
+          <div class="relative aspect-[16/9] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-6">
+            <img src="/images/prod_seo_1779342650263.png" alt="SEO Strategy"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+              class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="flex items-center space-x-4 text-xs font-bold text-yellow-400 tracking-wider uppercase mb-3">
+            <span>Growth</span>
+            <span class="text-borderDim">•</span>
+            <span class="text-textMuted">May 02, 2026</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-3 group-hover:text-yellow-400 transition-colors leading-tight">Advanced
+            Technical SEO for Stores</h2>
+          <p class="text-textMuted line-clamp-2">Implementing dynamic schema markup and faceted URL management for
+            e-commerce.</p>
+        </a>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="group animate-on-scroll delay-100">
+        <a href="#" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl">
+          <div class="relative aspect-[16/9] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-6">
+            <img src="/images/prod_security_1779342602370.png" alt="Security"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+              class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="flex items-center space-x-4 text-xs font-bold text-orange-400 tracking-wider uppercase mb-3">
+            <span>Security</span>
+            <span class="text-borderDim">•</span>
+            <span class="text-textMuted">April 28, 2026</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-3 group-hover:text-orange-400 transition-colors leading-tight">Hardening
+            WooCommerce at Scale</h2>
+          <p class="text-textMuted line-clamp-2">How our Advanced Security Pro module intercepts and neutralizes threats
+            before they hit the database.</p>
+        </a>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="group animate-on-scroll delay-200">
+        <a href="#" class="block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl">
+          <div class="relative aspect-[16/9] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-6">
+            <img src="/images/prod_woo_1779342514137.png" alt="Dashboard Redesign"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div
+              class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>
+          </div>
+          <div class="flex items-center space-x-4 text-xs font-bold text-primary tracking-wider uppercase mb-3">
+            <span>Design</span>
+            <span class="text-borderDim">•</span>
+            <span class="text-textMuted">April 15, 2026</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight">The Awwwards
+            Aesthetic</h2>
+          <p class="text-textMuted line-clamp-2">Deconstructing the visual language of top-tier SaaS landing pages and
+            how we brought it to WordPress.</p>
+        </a>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface border-t border-borderDim pt-24 pb-12 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-5">
+          <a href="/" class="text-4xl font-black font-heading tracking-tight text-textMain mb-6 block">Aspire<span
+              class="text-primary">.</span></a>
+          <p class="text-textMuted text-lg leading-relaxed mb-8 max-w-md">The premium commerce toolkit for modern
+            brands. Designed for performance, engineered for conversion.</p>
+        </div>
+        <div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="font-bold text-textMain mb-6 uppercase tracking-wider text-sm">Product</h4>
+            <ul class="space-y-4">
+              <li><a href="/pages/features.html" class="nav-link">Features</a></li>
+              <li><a href="/pages/pricing.html" class="nav-link">Pricing</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-borderDim pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-textMuted text-sm">© 2026 Aspire Commerce Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

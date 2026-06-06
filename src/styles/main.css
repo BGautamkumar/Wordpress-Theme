@@ -1,0 +1,243 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* BASE                                                                        */
+/* ─────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #080810;
+    color: #e8e8f0;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Subtle 60px dot-grid texture — gives depth without random blurs */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* COMPONENTS                                                                  */
+/* ─────────────────────────────────────────────────────────────────────────── */
+@layer components {
+
+  /* ── Navigation ── */
+  .glass-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(8, 8, 16, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #9090a8;
+    transition: color 0.2s ease;
+    text-decoration: none;
+  }
+  .nav-link:hover,
+  .nav-link.active { color: #ffffff; }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #a8ff00;
+    color: #080810;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-primary:hover {
+    background-color: #c8ff40;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px rgba(168, 255, 0, 0.3);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: #e8e8f0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-secondary:hover {
+    border-color: rgba(255,255,255,0.3);
+    background-color: rgba(255,255,255,0.04);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: #9090a8;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    text-decoration: none;
+  }
+  .btn-ghost:hover {
+    color: #e8e8f0;
+    background-color: rgba(255,255,255,0.05);
+  }
+
+  /* ── Cards ── */
+  .card {
+    background-color: #0e0e1a;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .card:hover {
+    border-color: rgba(255,255,255,0.14);
+    transform: translateY(-2px);
+  }
+
+  /* Used in bento grid (index.html), products.html and pricing.html */
+  .premium-card {
+    position: relative;
+    background-color: #0e0e1a;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 2rem;
+    overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .premium-card:hover {
+    border-color: rgba(168, 255, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* ── Mega Menu ── */
+  .mega-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: -20px;
+    width: 540px;
+    background-color: #0e0e1a;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    z-index: 50;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  /* ── Forms ── */
+  .input-premium {
+    width: 100%;
+    background-color: #0e0e1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #e8e8f0;
+    border-radius: 8px;
+    padding: 0.875rem 1.125rem;
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+  }
+  .input-premium:focus {
+    border-color: #a8ff00;
+    box-shadow: 0 0 0 3px rgba(168, 255, 0, 0.1);
+  }
+  .input-premium::placeholder { color: #5a5a70; }
+
+  /* ── Section Label ── */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9090a8;
+    margin-bottom: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background-color: #9090a8;
+  }
+
+  /* ── Scroll Reveal Animations ── */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* DROPDOWN STATE — toggled by main.js                                         */
+/* ─────────────────────────────────────────────────────────────────────────── */
+.mega-menu.opacity-0     { opacity: 0; pointer-events: none; }
+.mega-menu.invisible     { visibility: hidden; }
+.mega-menu.translate-y-2 { transform: translateY(8px); }
+.mega-menu.opacity-100   { opacity: 1; }
+.mega-menu.visible       { visibility: visible; }
+.mega-menu.translate-y-0 { transform: translateY(0); }
+
+/* ─────────────────────────────────────────────────────────────────────────── */
+/* UTILITIES                                                                   */
+/* ─────────────────────────────────────────────────────────────────────────── */
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #080810; }
+::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a50; }
+
+/* Text selection */
+::selection { background: rgba(168, 255, 0, 0.25); color: #fff; }

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Aspire</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/scripts/main.js"></script>
+  
+  <!-- Custom Script for filtering -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filters = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.product-item');
+
+      filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active state from all
+          filters.forEach(f => {
+            f.classList.remove('bg-primary/10', 'text-primary', 'border-primary');
+            f.classList.add('bg-surface', 'text-textMuted', 'border-borderDim');
+          });
+          
+          // Add active state to clicked
+          btn.classList.add('bg-primary/10', 'text-primary', 'border-primary');
+          btn.classList.remove('bg-surface', 'text-textMuted', 'border-borderDim');
+          
+          const filter = btn.getAttribute('data-filter');
+          
+          items.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+              item.style.display = 'block';
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+              }, 50);
+            } else {
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(10px)';
+              setTimeout(() => {
+                item.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+    });
+  </script>
+</head>
+<body class="font-body overflow-x-hidden antialiased bg-darkBg text-textMain">
+  <!-- Navigation -->
+  <nav class="glass-nav sticky top-0 z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-12">
+          <a href="/" class="text-3xl font-black font-heading tracking-tight text-textMain">Aspire<span class="text-primary">.</span></a>
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="/pages/products.html" class="nav-link text-primary font-bold">Products</a>
+            <a href="/pages/templates.html" class="nav-link">Templates</a>
+            <a href="/pages/features.html" class="nav-link">Features</a>
+            <a href="/pages/blog.html" class="nav-link">Blog</a>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div id="auth-container" class="hidden lg:flex items-center space-x-4"></div>
+          <button id="mobile-menu-btn" class="lg:hidden text-textMain hover:text-primary"><svg class="w-6 h-6 mobile-menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="pt-32 pb-20 border-b border-borderDim relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent z-0"></div>
+    <div class="container mx-auto px-6 relative z-10 text-center animate-on-scroll">
+      <h1 class="text-5xl md:text-7xl font-black font-heading mb-6 tracking-tight">The Ecosystem.</h1>
+      <p class="text-xl text-textMuted max-w-2xl mx-auto">Explore our suite of premium commerce tools designed to maximize conversion rates and scale your brand.</p>
+    </div>
+  </header>
+
+  <!-- Products Grid -->
+  <main class="py-24 container mx-auto px-6">
+    <!-- Filters -->
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-16 animate-on-scroll delay-100">
+      <button data-filter="all" class="filter-btn px-6 py-2 rounded-full border border-primary bg-primary/10 text-primary font-bold text-sm transition-all">All Products</button>
+      <button data-filter="theme" class="filter-btn px-6 py-2 rounded-full border border-borderDim bg-surface text-textMuted hover:text-textMain hover:border-white/20 font-bold text-sm transition-all">Themes</button>
+      <button data-filter="plugin" class="filter-btn px-6 py-2 rounded-full border border-borderDim bg-surface text-textMuted hover:text-textMain hover:border-white/20 font-bold text-sm transition-all">Plugins</button>
+      <button data-filter="extension" class="filter-btn px-6 py-2 rounded-full border border-borderDim bg-surface text-textMuted hover:text-textMain hover:border-white/20 font-bold text-sm transition-all">Extensions</button>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+      
+      <!-- Themes -->
+      <a href="/pages/pricing.html" data-category="theme" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_woo_1779342514137.png" alt="Aspire WooCommerce" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-primary transition-colors">Aspire WooCommerce</h3>
+          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">$59</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">The flagship theme. Lightning fast, heavily customizable, and built for modern eCommerce.</p>
+        <div class="flex items-center text-sm font-bold text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <a href="/pages/pricing.html" data-category="theme" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_shopify_1779342534502.png" alt="Aspire Shopify" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-[#00ffcc] transition-colors">Aspire Shopify</h3>
+          <span class="bg-[#00ffcc]/10 text-[#00ffcc] px-3 py-1 rounded-full text-xs font-bold">$129</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">The Shopify port of our famous theme. Headless-ready structure with massive scaling.</p>
+        <div class="flex items-center text-sm font-bold text-[#00ffcc] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <a href="/pages/pricing.html" data-category="theme" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_nextjs_1779342552349.png" alt="Aspire Next.js" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-green-400 transition-colors">Aspire Next.js</h3>
+          <span class="bg-green-400/10 text-green-400 px-3 py-1 rounded-full text-xs font-bold">$199</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">A complete headless commerce starter kit built on Next.js 14 and Vercel.</p>
+        <div class="flex items-center text-sm font-bold text-green-400 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <a href="/pages/pricing.html" data-category="theme" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_ghost_1779342568016.png" alt="Aspire Ghost" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-blue-400 transition-colors">Aspire Ghost</h3>
+          <span class="bg-blue-400/10 text-blue-400 px-3 py-1 rounded-full text-xs font-bold">$49</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">Minimalist publishing theme for Ghost. Beautiful typography and ultra-fast loads.</p>
+        <div class="flex items-center text-sm font-bold text-blue-400 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <!-- Plugins -->
+      <a href="/pages/pricing.html" data-category="plugin" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_cwv_1779342586301.png" alt="Core Web Vitals Boost" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-primary transition-colors">Web Vitals Boost</h3>
+          <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">$39/yr</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">Our proprietary caching plugin. Guarantees 99/100 scores on Google PageSpeed.</p>
+        <div class="flex items-center text-sm font-bold text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <a href="/pages/pricing.html" data-category="plugin" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_security_1779342602370.png" alt="Advanced Security Pro" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-orange-500 transition-colors">Advanced Security Pro</h3>
+          <span class="bg-orange-500/10 text-orange-500 px-3 py-1 rounded-full text-xs font-bold">$29/yr</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">Enterprise-grade firewall and security rules for WooCommerce instances running Aspire.</p>
+        <div class="flex items-center text-sm font-bold text-orange-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <a href="/pages/pricing.html" data-category="plugin" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_abtesting_1779342630338.png" alt="A/B Testing Engine" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-purple-500 transition-colors">A/B Testing Engine</h3>
+          <span class="bg-purple-500/10 text-purple-500 px-3 py-1 rounded-full text-xs font-bold">$79</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">Integrated split testing engine for WooCommerce. No external scripts required.</p>
+        <div class="flex items-center text-sm font-bold text-purple-500 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <a href="/pages/pricing.html" data-category="plugin" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_seo_1779342650263.png" alt="SEO Optimizer Pro" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-yellow-400 transition-colors">SEO Optimizer Pro</h3>
+          <span class="bg-yellow-400/10 text-yellow-400 px-3 py-1 rounded-full text-xs font-bold">$49/yr</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">Automate schema markup, OpenGraph generation, and rank tracking dynamically.</p>
+        <div class="flex items-center text-sm font-bold text-yellow-400 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <!-- Extensions -->
+      <a href="/pages/pricing.html" data-category="extension" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_visual_1779342666277.png" alt="Aspire Visual Builder" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-white transition-colors">Aspire Visual Builder</h3>
+          <span class="bg-white/10 text-white px-3 py-1 rounded-full text-xs font-bold">$49</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">Drag and drop visual builder extension. Completely modular architecture.</p>
+        <div class="flex items-center text-sm font-bold text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <a href="/pages/pricing.html" data-category="extension" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_dynamic_1779342683439.png" alt="Dynamic Content Manager" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-pink-400 transition-colors">Dynamic Content Mgr</h3>
+          <span class="bg-pink-400/10 text-pink-400 px-3 py-1 rounded-full text-xs font-bold">$29</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">Create custom post types and fields on the fly. Link database entries directly to UI.</p>
+        <div class="flex items-center text-sm font-bold text-pink-400 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <a href="/pages/pricing.html" data-category="extension" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/prod_filter_1779342701676.png" alt="Advanced Filter UI" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-cyan-400 transition-colors">Advanced Filter UI</h3>
+          <span class="bg-cyan-400/10 text-cyan-400 px-3 py-1 rounded-full text-xs font-bold">$19</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">Faceted search algorithms for WooCommerce with lightning fast Ajax reloading.</p>
+        <div class="flex items-center text-sm font-bold text-cyan-400 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+
+      <a href="/pages/pricing.html" data-category="extension" class="product-item premium-card group block focus:outline-none focus-visible:ring-4 focus-visible:ring-primary rounded-2xl transition-all duration-300">
+        <div class="aspect-[16/10] bg-darkBg border border-borderDim rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+          <img src="/images/demo_tech_1779342072952.png" alt="Crypto Gateway" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-2xl font-bold group-hover:text-orange-400 transition-colors">Crypto Gateway</h3>
+          <span class="bg-orange-400/10 text-orange-400 px-3 py-1 rounded-full text-xs font-bold">$99</span>
+        </div>
+        <p class="text-textMuted mb-6 line-clamp-2">Accept BTC, ETH, and SOL natively. No third-party redirects required.</p>
+        <div class="flex items-center text-sm font-bold text-orange-400 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          View Product <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface border-t border-borderDim pt-24 pb-12 mt-24">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-5">
+          <a href="/" class="text-4xl font-black font-heading tracking-tight text-textMain mb-6 block">Aspire<span class="text-primary">.</span></a>
+          <p class="text-textMuted text-lg leading-relaxed mb-8 max-w-md">The premium commerce toolkit for modern brands. Designed for performance, engineered for conversion.</p>
+        </div>
+      </div>
+      <div class="border-t border-borderDim pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-textMuted text-sm">© 2026 Aspire Commerce Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Templates - Aspire</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/scripts/main.js"></script>
+</head>
+<body class="font-body text-textMain bg-darkBg antialiased overflow-x-hidden">
+
+  <!-- Top accent line -->
+  <div class="fixed top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent z-[51] pointer-events-none"></div>
+
+  <!-- Navigation -->
+  <nav class="glass-nav sticky top-0 z-50 transition-all duration-300">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-12">
+          <a href="/" class="text-3xl font-black font-heading tracking-tight text-textMain">Aspire<span class="text-primary">.</span></a>
+          <div class="hidden lg:flex items-center space-x-8">
+            <a href="/pages/products.html" class="nav-link">Products</a>
+            <a href="/pages/templates.html" class="nav-link text-primary font-bold">Templates</a>
+            <a href="/pages/features.html" class="nav-link">Features</a>
+            <a href="/pages/blog.html" class="nav-link">Blog</a>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div id="auth-container" class="hidden lg:flex items-center space-x-4"></div>
+          <button id="mobile-menu-btn" class="lg:hidden text-textMain hover:text-primary"><svg class="w-6 h-6 mobile-menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="pt-24 pb-16 relative overflow-hidden text-center border-b border-borderDim">
+    <div class="container mx-auto px-6 relative z-10 animate-on-scroll">
+      <h1 class="text-5xl md:text-7xl font-black font-heading mb-6 tracking-tight">85+ Premium Templates.</h1>
+      <p class="text-xl text-textMuted max-w-2xl mx-auto mb-10">Import any of these stunning starting points with one click and customize infinitely.</p>
+      
+      <!-- Search Bar -->
+      <div class="max-w-xl mx-auto relative group">
+        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-textMuted group-focus-within:text-primary transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+        <input type="text" id="search-input" placeholder="Search templates..." class="input-premium pl-12 text-lg py-4 w-full bg-surface shadow-2xl">
+      </div>
+    </div>
+  </header>
+
+  <!-- Template Grid -->
+  <main class="py-24 container mx-auto px-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10" id="templates-grid">
+      
+      <!-- Template 1 -->
+      <div class="template-card-item group block animate-on-scroll focus-within:ring-4 focus-within:ring-primary rounded-2xl" data-name="studio minimal" data-category="furniture">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/demo_minimal_1779342057223.png" alt="Studio Minimal" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Studio Minimal</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Furniture</span>
+        </div>
+      </div>
+
+      <!-- Template 2 -->
+      <div class="template-card-item group block animate-on-scroll delay-100 focus-within:ring-4 focus-within:ring-primary rounded-2xl" data-name="tech hub" data-category="electronics">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/demo_tech_1779342072952.png" alt="Tech Hub" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Tech Hub</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Electronics</span>
+        </div>
+      </div>
+
+      <!-- Template 3 -->
+      <div class="template-card-item group block animate-on-scroll delay-200 focus-within:ring-4 focus-within:ring-primary rounded-2xl" data-name="aura beauty" data-category="cosmetics">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/demo_beauty_1779342091243.png" alt="Aura Beauty" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Aura Beauty</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Cosmetics</span>
+        </div>
+      </div>
+
+      <!-- Template 4 -->
+      <div class="template-card-item group block animate-on-scroll focus-within:ring-4 focus-within:ring-primary rounded-2xl" data-name="digital agency" data-category="portfolio">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/demo_agency_1779342109586.png" alt="Digital Agency" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Digital Agency</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Portfolio</span>
+        </div>
+      </div>
+
+      <!-- Template 5 -->
+      <div class="template-card-item group block animate-on-scroll delay-100 focus-within:ring-4 focus-within:ring-primary rounded-2xl" data-name="saas dashboard" data-category="software">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/demo_saas_1779342126960.png" alt="SaaS Dashboard" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">SaaS Dashboard</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Software</span>
+        </div>
+      </div>
+
+      <!-- Template 6 -->
+      <div class="template-card-item group block animate-on-scroll delay-200 focus-within:ring-4 focus-within:ring-primary rounded-2xl" data-name="fashion brand" data-category="apparel">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/demo_fashion_1779342143616.png" alt="Fashion Brand" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Fashion Brand</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Apparel</span>
+        </div>
+      </div>
+      
+      <!-- Template 7 -->
+      <div class="template-card-item group block animate-on-scroll focus-within:ring-4 focus-within:ring-primary rounded-2xl" data-name="store analytics" data-category="dashboard">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/prod_woo_1779342514137.png" alt="Store Analytics" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Store Analytics</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Dashboard</span>
+        </div>
+      </div>
+
+      <!-- Template 8 -->
+      <div class="template-card-item group block animate-on-scroll delay-100 focus-within:ring-4 focus-within:ring-primary rounded-2xl" data-name="headless merch" data-category="shopify">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/prod_shopify_1779342534502.png" alt="Headless Merch" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Headless Merch</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Shopify</span>
+        </div>
+      </div>
+
+      <!-- Template 9 -->
+      <div class="template-card-item group block animate-on-scroll delay-200 focus-within:ring-4 focus-within:ring-primary rounded-2xl" data-name="editorial" data-category="publishing">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/prod_ghost_1779342568016.png" alt="Editorial" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Editorial</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Publishing</span>
+        </div>
+      </div>
+
+      <!-- Template 10 -->
+      <div class="template-card-item group block animate-on-scroll focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="apex speed" data-category="optimization">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_apex_speed.jpg" alt="Apex Speed" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Apex Speed</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Optimization</span>
+        </div>
+      </div>
+
+      <!-- Template 11 -->
+      <div class="template-card-item group block animate-on-scroll delay-100 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="securegate" data-category="security">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_securegate.jpg" alt="SecureGate" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">SecureGate</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Security</span>
+        </div>
+      </div>
+
+      <!-- Template 12 -->
+      <div class="template-card-item group block animate-on-scroll delay-200 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="splittest" data-category="analytics">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_splittest.jpg" alt="SplitTest" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">SplitTest</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Analytics</span>
+        </div>
+      </div>
+
+      <!-- Template 13 -->
+      <div class="template-card-item group block animate-on-scroll focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="seo suite" data-category="marketing">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_seosuite.jpg" alt="SEO Suite" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">SEO Suite</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Marketing</span>
+        </div>
+      </div>
+
+      <!-- Template 14 -->
+      <div class="template-card-item group block animate-on-scroll delay-100 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="visual builder" data-category="editor">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_visualbuilder.jpg" alt="Visual Builder" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Visual Builder</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Editor</span>
+        </div>
+      </div>
+
+      <!-- Template 15 -->
+      <div class="template-card-item group block animate-on-scroll delay-200 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="dynamic core" data-category="framework">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_dynamiccore.jpg" alt="Dynamic Core" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Dynamic Core</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Framework</span>
+        </div>
+      </div>
+
+      <!-- Template 16 -->
+      <div class="template-card-item group block animate-on-scroll focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="facet filter" data-category="search">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_facetfilter.jpg" alt="Facet Filter" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Facet Filter</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Search</span>
+        </div>
+      </div>
+
+      <!-- Template 17 -->
+      <div class="template-card-item group block animate-on-scroll delay-100 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="next.js shop" data-category="react">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_nextjsshop.jpg" alt="Next.js Shop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Next.js Shop</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">React</span>
+        </div>
+      </div>
+
+      <!-- Template 18 -->
+      <div class="template-card-item group block animate-on-scroll delay-200 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="luxe atelier" data-category="jewelry">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_luxeatelier.jpg" alt="Luxe Atelier" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Luxe Atelier</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Jewelry</span>
+        </div>
+      </div>
+
+      <!-- Template 19 -->
+      <div class="template-card-item group block animate-on-scroll focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="electro pro" data-category="tech">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_electropro.jpg" alt="Electro Pro" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Electro Pro</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Tech</span>
+        </div>
+      </div>
+
+      <!-- Template 20 -->
+      <div class="template-card-item group block animate-on-scroll delay-100 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="glow skin" data-category="skincare">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_glowskin.jpg" alt="Glow Skin" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Glow Skin</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Skincare</span>
+        </div>
+      </div>
+
+      <!-- Template 21 -->
+      <div class="template-card-item group block animate-on-scroll delay-200 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="kicks shop" data-category="sneakers">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_kicksshop.jpg" alt="Kicks Shop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Kicks Shop</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Sneakers</span>
+        </div>
+      </div>
+
+      <!-- Template 22 -->
+      <div class="template-card-item group block animate-on-scroll focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="urban fit" data-category="apparel">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_urbanfit.jpg" alt="Urban Fit" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Urban Fit</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Apparel</span>
+        </div>
+      </div>
+
+      <!-- Template 23 -->
+      <div class="template-card-item group block animate-on-scroll delay-100 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="crafts store" data-category="handmade">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_craftsstore.jpg" alt="Crafts Store" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">Crafts Store</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Handmade</span>
+        </div>
+      </div>
+
+      <!-- Template 24 -->
+      <div class="template-card-item group block animate-on-scroll delay-200 focus-within:ring-4 focus-within:ring-primary rounded-2xl hidden" data-name="saas landing" data-category="startup">
+        <div class="relative aspect-[4/3] rounded-2xl bg-surface border border-borderDim overflow-hidden mb-5">
+          <img src="/images/template_saaslanding.jpg" alt="SaaS Landing" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-darkBg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="btn-primary text-sm px-6 py-3">Live Preview</a>
+          </div>
+        </div>
+        <div class="flex justify-between items-center px-2">
+          <h3 class="font-bold text-xl group-hover:text-primary transition-colors">SaaS Landing</h3>
+          <span class="text-xs font-medium text-textMuted bg-surface px-3 py-1.5 rounded-full border border-borderDim">Startup</span>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="text-center mt-16 animate-on-scroll">
+      <button id="load-more-btn" class="btn-secondary px-8 py-4 text-lg">Load More Templates</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface border-t border-borderDim pt-24 pb-12 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div class="lg:col-span-5">
+          <a href="/" class="text-4xl font-black font-heading tracking-tight text-textMain mb-6 block">Aspire<span class="text-primary">.</span></a>
+          <p class="text-textMuted text-lg leading-relaxed mb-8 max-w-md">The premium commerce toolkit for modern brands. Designed for performance, engineered for conversion.</p>
+        </div>
+        <div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="font-bold text-textMain mb-6 uppercase tracking-wider text-sm">Product</h4>
+            <ul class="space-y-4">
+              <li><a href="/pages/features.html" class="nav-link">Features</a></li>
+              <li><a href="/pages/pricing.html" class="nav-link">Pricing</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-borderDim pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-textMuted text-sm">© 2026 Aspire Commerce Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      const items = Array.from(document.querySelectorAll('.template-card-item'));
+      
+      let visibleCount = 9;
+
+      const updateUI = () => {
+        const query = searchInput.value.toLowerCase().trim();
+        
+        let matchingItems = items;
+        if (query) {
+          matchingItems = items.filter(item => {
+            const name = item.getAttribute('data-name') || '';
+            const category = item.getAttribute('data-category') || '';
+            return name.includes(query) || category.includes(query);
+          });
+        }
+
+        // Hide/Show items based on matches and visibility count
+        items.forEach(item => {
+          item.classList.add('hidden');
+        });
+
+        const showLimit = query ? matchingItems.length : visibleCount;
+        const itemsToDisplay = matchingItems.slice(0, showLimit);
+
+        itemsToDisplay.forEach(item => {
+          item.classList.remove('hidden');
+          // Trigger scroll reveal immediately for loaded/filtered elements
+          item.classList.add('visible');
+        });
+
+        // Hide load more button if no more items or if searching
+        if (query || visibleCount >= matchingItems.length) {
+          loadMoreBtn.classList.add('hidden');
+        } else {
+          loadMoreBtn.classList.remove('hidden');
+        }
+      };
+
+      loadMoreBtn.addEventListener('click', () => {
+        visibleCount += 9;
+        updateUI();
+      });
+
+      searchInput.addEventListener('input', updateUI);
+
+      // Initial run to show first 9
+      updateUI();
+    });
+  </script>
+</body>
+</html>
